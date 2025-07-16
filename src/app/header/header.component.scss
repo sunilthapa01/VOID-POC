@@ -1,0 +1,89 @@
+
+header {
+    display: flex;
+    padding: 43px clamp(30px , 5vw , 60px);
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+
+    align-items: center;
+    img {
+        object-fit: contain;
+        max-width: 140px;
+        height:auto;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 3.2rem;
+        ul {
+            display: flex;
+            gap:3rem;
+
+            li {
+                list-style: none;
+                cursor: pointer;
+                position: relative;
+                z-index: 1;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    transform-origin: center;
+                    visibility: hidden;
+                    border-right: 1px solid #fff;
+                    border-left: 1px solid #fff;
+                    width: 100%;
+                    left: -10px;
+                    height: 100%;
+                    padding: 10px;
+                    top: -10px;
+                    border-radius: 5px;
+                    z-index: -1;
+                    transition: transform 0.3s ease;
+                    
+                }
+                &:hover::after {
+                    visibility: visible;
+                    transform:scale(1.1)  rotate(180deg);
+
+
+                }
+            }
+        }
+    }
+
+    .side-section {
+        display: flex;
+        gap: 1.2rem;
+        #pro {
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0px 0px 10px #fff;
+            }
+        }
+        #like {
+        transition: all 0.3s ease;
+        border-radius: 50%;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 10px red;
+        }
+        }
+        #cart {
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0px 0px 10px red;
+            }
+    
+            }
+
+        
+    }
+}
